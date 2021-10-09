@@ -1,3 +1,5 @@
+
+
 function getIndex(list, id) {
     for(var i = 0; i < list.lenght; ++i) {
         if(list[i].id === id)
@@ -18,6 +20,7 @@ Vue.component('messages-list', {
             message_text: ''
         }
     },
+
     template:
         '<div style="position: relative; width: 300px;">' +
         '<div>' +
@@ -32,6 +35,7 @@ Vue.component('messages-list', {
         '</span>' +
         '</div>' +
         '</div>',
+
     methods: {
         save: function() {
             if(this.message_id == 0) {
@@ -53,10 +57,12 @@ Vue.component('messages-list', {
                 );
             }
         },
+
         edit: function(message) {
             this.message_id = message.id;
             this.message_text = message.text;
         },
+
         del: function(message) {
             messageApi.remove({ id: message.id }).then(result => {
                 if(result.ok) {
@@ -67,6 +73,7 @@ Vue.component('messages-list', {
             });
         }
     },
+
     created: function() {
         messageApi.get().then(result =>
             result.json().then(data =>
@@ -75,6 +82,8 @@ Vue.component('messages-list', {
         );
     }
 });
+
+
 
 var app = new Vue({
     el: '#app',
