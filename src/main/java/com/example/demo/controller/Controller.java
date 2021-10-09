@@ -46,7 +46,6 @@ public class Controller {
     public Map<String, String> create(@RequestBody Map<String, String> message) {
         message.put("id", String.valueOf(counter++));
         messages.add(message);
-
         return message;
     }
 
@@ -55,14 +54,12 @@ public class Controller {
         Map<String, String> messageFromDb = getMessage(id);
         messageFromDb.putAll(message);
         messageFromDb.put("id", id);
-
         return messageFromDb;
     }
 
     @DeleteMapping("{id}")
     public void delete(@PathVariable String id) {
         Map<String, String> message = getMessage(id);
-
         messages.remove(message);
     }
 }

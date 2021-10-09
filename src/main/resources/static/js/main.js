@@ -38,7 +38,7 @@ Vue.component('messages-list', {
 
     methods: {
         save: function() {
-            if(this.message_id == 0) {
+            if(this.message_id === 0) {
                 messageApi.save({}, { text: this.message_text }).then(result =>
                     result.json().then(data => {
                         this.messages.push(data);
@@ -92,3 +92,27 @@ var app = new Vue({
         messages: []
     }
 });
+
+
+// Vue.component('message-row', {
+//     props: ['message', 'editMethod', 'messages'],
+//     template: '<div>' +
+//         '<i>({{ message.id }})</i> {{ message.text }}' +
+//         '<span style="position: absolute; right: 0">' +
+//         '<input type="button" value="Edit" @click="edit" />' +
+//         '<input type="button" value="X" @click="del" />' +
+//         '</span>' +
+//         '</div>',
+//     methods: {
+//         edit: function() {
+//             this.editMethod(this.message);
+//         },
+//         del: function() {
+//             messageApi.remove({id: this.message.id}).then(result => {
+//                 if (result.ok) {
+//                     this.messages.splice(this.messages.indexOf(this.message), 1)
+//                 }
+//             })
+//         }
+//     }
+// });
