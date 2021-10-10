@@ -13,11 +13,11 @@ import java.util.List;
 
 @RestController
 @RequestMapping("message")
-public class Controller {
+public class MessageController {
     private final MessageRepo messageRepo;
 
     @Autowired
-    public Controller(MessageRepo messageRepo) {
+    public MessageController(MessageRepo messageRepo) {
         this.messageRepo = messageRepo;
     }
 
