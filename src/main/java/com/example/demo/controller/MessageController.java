@@ -41,12 +41,13 @@ public class MessageController {
         return messageRepo.save(message);
     }
 
-    @RequestMapping(value="{id}", method=RequestMethod.PUT)
+    @PutMapping("{id}")
     public Message update(
             @PathVariable("id") Message messageFromDb,
             @RequestBody Message message
     ) {
         BeanUtils.copyProperties(message, messageFromDb, "id");
+
         return messageRepo.save(messageFromDb);
     }
 
@@ -56,10 +57,8 @@ public class MessageController {
     }
 
     @MessageMapping("/changeMessage")
-    @SendTo("/activity")
+    @SendTo("/topic/activity")
     public Message message(Message message) {
         return messageRepo.save(message);
     }
-
-
 }
