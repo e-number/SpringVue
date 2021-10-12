@@ -6,12 +6,14 @@ module.exports = {
     devtool: 'source-map',
     entry: path.join(__dirname, 'src', 'main', 'resources', 'static', 'js', 'main.js'),
     devServer: {
-        // contentBase: './dist',
+        static: './',
         compress: true,
         port: 8000,
         allowedHosts: [
             'localhost:9000'
-        ]
+        ],
+        // stats: 'errors-only',
+        // clientLogLevel: 'error',
     },
     module: {
         rules: [
