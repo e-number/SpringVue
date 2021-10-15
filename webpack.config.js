@@ -44,6 +44,7 @@ module.exports = {
         new VueLoaderPlugin()
     ],
     resolve: {
+        // extensions: ['.js', '.ts'],
         modules: [
             path.join(__dirname, 'src', 'main', 'resources', 'static', 'js'),
             path.join(__dirname, 'node_modules'),

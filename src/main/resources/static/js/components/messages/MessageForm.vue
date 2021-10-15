@@ -1,4 +1,3 @@
-
 <template>
   <v-layout class="spacing-playground pa-6" fluid>
     <v-text-field
