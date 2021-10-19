@@ -8,7 +8,7 @@ CREATE TABLE spring_session
     last_access_time      BIGINT   NOT NULL,
     max_inactive_interval INTEGER  NOT NULL,
     expiry_time           BIGINT   NOT NULL,
-    principal_name        VARCHAR(300)
+    principal_name        VARCHAR(888)
 );
 
 CREATE UNIQUE INDEX spring_session_ix1
@@ -27,7 +27,7 @@ CREATE TABLE spring_session_attributes
         CONSTRAINT spring_session_attributes_fk
             REFERENCES spring_session
             ON DELETE CASCADE,
-    attribute_name     VARCHAR(200) NOT NULL,
+    attribute_name     VARCHAR(888) NOT NULL,
     attribute_bytes    BYTEA        NOT NULL,
     CONSTRAINT spring_session_attributes_pk
         PRIMARY KEY (session_primary_id, attribute_name)

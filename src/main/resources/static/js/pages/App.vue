@@ -2,14 +2,14 @@
   <v-app>
     <v-app-bar app>
       <v-toolbar-title>Sarafan</v-toolbar-title>
-      <v-btn class="mx-2" flat
+      <v-btn class="mx-2" text
              v-if="profile" mx-2
              :disabled="$route.path === '/'"
              @click="showMessages">
         Messages
       </v-btn>
       <v-spacer></v-spacer>
-      <v-btn flat v-if="profile"
+      <v-btn text v-if="profile"
              :disabled="$route.path === '/profile'"
              @click="showProfile">
         {{profile.name}}
