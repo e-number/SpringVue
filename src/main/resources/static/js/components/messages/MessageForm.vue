@@ -1,5 +1,5 @@
 <template>
-  <v-layout class="spacing-playground pa-6" fluid>
+  <v-layout row>
     <v-text-field
         label="New message"
         placeholder="Write something"
@@ -14,7 +14,6 @@
 
 <script>
 import { mapActions } from 'vuex'
-
 export default {
   props: ['messageAttr'],
   data() {
