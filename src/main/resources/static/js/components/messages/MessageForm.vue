@@ -19,7 +19,7 @@ export default {
   data() {
     return {
       text: '',
-      id: ''
+      id: null
     }
   },
   watch: {
@@ -32,7 +32,7 @@ export default {
     ...mapActions(['addMessageAction', 'updateMessageAction']),
     save() {
       const message = {
-        id: null,
+        id: this.id,
         text: this.text
       }
       if (this.id) {
