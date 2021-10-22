@@ -9,7 +9,7 @@ import 'vuetify/dist/vuetify.min.css'
 import router from "./router/router";
 
 
-if (frontendData.profile) {
+if (profile) {
     connect()
 }
 

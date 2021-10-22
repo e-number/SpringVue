@@ -27,7 +27,6 @@
 <script>
 import { mapState, mapMutations } from 'vuex'
 import { addHandler } from 'util/ws'
-
 export default {
   computed: mapState(['profile']),
   methods: {
@@ -41,10 +40,9 @@ export default {
       this.$router.push('/')
     },
     showProfile() {
-      this.$router.push('/profile')
+      this.$router.push('/user')
     }
   },
-
   created() {
     addHandler(data => {
       if (data.objectType === 'MESSAGE') {
