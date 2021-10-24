@@ -9,7 +9,8 @@
   "author": "e-number <eggnom@yandex.ru>",
   "license": "MIT",
   "scripts": {
-    "start": "webpack-dev-server"
+    "start": "webpack-dev-server --open --config webpack.dev.js",
+    "build": "webpack --config webpack.prod.js"
   },
   "dependencies": {
     "@babel/polyfill": "^7.12.1",
@@ -29,6 +30,7 @@
     "@babel/core": "^7.0.0",
     "@babel/preset-env": "^7.0.0",
     "babel-loader": "^8.0.2",
+    "clean-webpack-plugin": "^4.0.0",
     "css-loader": "^6.4.0",
     "deepmerge": "^4.2.2",
     "sass": "^1.32.13",
@@ -38,7 +40,8 @@
     "vue-template-compiler": "^2.5.17",
     "webpack": "^5.58.1",
     "webpack-cli": "^4.9.0",
-    "webpack-dev-server": "^4.3.1"
+    "webpack-dev-server": "^4.3.1",
+    "webpack-merge": "^5.8.0"
   },
   "bugs": {
     "url": "https://github.com/e-number/SpringVue/issues"

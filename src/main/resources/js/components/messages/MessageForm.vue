@@ -1,5 +1,5 @@
 <template>
-  <v-layout row class="px-3">
+  <v-layout row class="spacing-playground pa-6" fluid>
     <v-text-field
         label="New message"
         placeholder="Write something"

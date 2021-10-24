@@ -2,11 +2,23 @@ plugins {
 	id 'org.springframework.boot' version '2.5.5'
 	id 'io.spring.dependency-management' version '1.0.11.RELEASE'
 	id 'java'
+	id 'com.github.node-gradle.node' version "2.2.0"
 }
 
 group = 'com.example'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '11'
+
+task buildFront(type: NpmTask) {
+	args = ['build']
+}
+
+task cache_clean(type: NpmTask) {
+	args = ['cache', 'clean', '--force']
+}
+npm_install.dependsOn(cache_clean)
+buildFront.dependsOn(npm_install)
+processResources.dependsOn(buildFront)
 
 repositories {
 	mavenCentral()
