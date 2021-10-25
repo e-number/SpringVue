@@ -10,7 +10,7 @@ version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '11'
 
 task buildFront(type: NpmTask) {
-	args = ['build']
+	args = ['run', 'build']
 }
 
 task cache_clean(type: NpmTask) {
@@ -26,6 +26,10 @@ repositories {
 
 node {
 	download = true
+}
+
+jar {
+	enabled = false
 }
 
 dependencies {

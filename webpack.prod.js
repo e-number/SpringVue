@@ -12,4 +12,5 @@ module.exports = merge(common, {
         filename: 'main.js',
         path: path.resolve(process.cwd(), 'src', 'main', 'resources', 'static', 'js'),
     }
+
 });

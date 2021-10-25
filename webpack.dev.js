@@ -7,7 +7,7 @@ module.exports = merge(common, {
     devServer: {
         static: './',
         compress: true,
-        port: 8000,
+        port: (process.env.PORT || 8000),
         allowedHosts: [
             'localhost:9000'
         ],
